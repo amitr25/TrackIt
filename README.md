@@ -1,3 +1,4 @@
+
 <div align="center">
 
 # 🎓 **TrackIt – Academic Dashboard for Smarter Learning**
@@ -52,3 +53,4 @@ TrackIt Capabilities:
   - Risk Detection: "Early alerts for low-performing students"
   - Authentication: "Azure AD (college Outlook ID login)"
   - Role-Based Access: "Faculty vs Student access control"
+
