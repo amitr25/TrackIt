@@ -16,24 +16,24 @@ export const Hero = () => {
           {/* Left Content */}
           <div className="animate-fade-in">
             <div className="flex items-center gap-2 mb-6">
-              <BarChart3 className="h-8 w-8 text-primary" />
-              <span className="text-lg font-semibold text-primary">TrackIt</span>
+              
             </div>
             
-            <h1 className="text-5xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
+            <h1 className="text-5xl lg:text-7xl font-bold text-foreground mb-6 leading-tight text-blue-300">
               Academic Dashboard for{" "}
-              <span className="bg-gradient-primary bg-clip-text text-transparent">
+              <span className="bg-gradient-primary bg-clip-text text-transparent text-green-400">
                 Smarter Learning
               </span>
             </h1>
             
-            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+            
+            <p className="text-xl text-muted-foreground mb-8 leading-relaxed text-blue-200">
               Transform scattered student data into powerful insights. TrackIt unifies attendance, 
               marks, and assignments into a comprehensive platform that predicts performance and 
               drives academic success.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+            {/* <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <Button variant="hero" size="lg" className="group" onClick={() => navigate('/auth')}>
                 Get Started with Azure Login
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -41,7 +41,7 @@ export const Hero = () => {
               <Button variant="outline" size="lg" onClick={() => navigate('/dashboard')}>
                 View Demo Dashboard
               </Button>
-            </div>
+            </div> */}
             
             {/* Quick Stats */}
             <div className="grid grid-cols-3 gap-6">
@@ -50,21 +50,21 @@ export const Hero = () => {
                   <Users className="h-6 w-6 text-primary" />
                 </div>
                 <div className="text-2xl font-bold text-foreground">2 Roles</div>
-                <div className="text-sm text-muted-foreground">Faculty & Students</div>
+                <div className="text-sm text-muted-foreground text-blue-200">Faculty & Students</div>
               </div>
               <div className="text-center">
                 <div className="flex items-center justify-center w-12 h-12 bg-secondary-light rounded-full mb-2 mx-auto">
                   <BarChart3 className="h-6 w-6 text-secondary" />
                 </div>
                 <div className="text-2xl font-bold text-foreground">360°</div>
-                <div className="text-sm text-muted-foreground">Analytics View</div>
+                <div className="text-sm text-muted-foreground text-blue-200">Analytics View</div>
               </div>
               <div className="text-center">
                 <div className="flex items-center justify-center w-12 h-12 bg-accent-light rounded-full mb-2 mx-auto">
                   <Brain className="h-6 w-6 text-accent" />
                 </div>
                 <div className="text-2xl font-bold text-foreground">AI-Powered</div>
-                <div className="text-sm text-muted-foreground">Predictions</div>
+                <div className="text-sm text-muted-foreground text-blue-200">Predictions</div>
               </div>
             </div>
           </div>
