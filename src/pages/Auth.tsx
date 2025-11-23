@@ -13,7 +13,7 @@ const Auth = () => {
   // Redirect if already authenticated
   useEffect(() => {
     if (user && !loading) {
-      navigate('/dashboard');
+      navigate('/');
     }
   }, [user, loading, navigate]);
 
