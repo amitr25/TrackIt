@@ -114,7 +114,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         provider: 'azure',
         options: {
           scopes: 'email profile openid',
-          redirectTo: `${window.location.origin}/dashboard`
+          
         }
       });
 
