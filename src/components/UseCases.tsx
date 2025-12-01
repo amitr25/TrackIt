@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useNavigate } from "react-router-dom";
 import { 
   GraduationCap, 
   Users, 
@@ -15,49 +16,51 @@ import {
 } from "lucide-react";
 
 export const UseCases = () => {
+  const navigate = useNavigate();
+  
   const facultyFeatures = [
     {
       icon: BookOpen,
-      title: "Course Management",
-      description: "Upload and manage student data for multiple courses with batch processing capabilities."
+      title: "Collapsible Data Tables",
+      description: "Manage large student datasets efficiently with collapsible sections, pagination (10-20 records per page), and clean navigation."
     },
     {
       icon: BarChart3,
-      title: "Class Analytics",
-      description: "View comprehensive analytics for entire classes including performance distributions and trends."
+      title: "Interactive Overview Analytics",
+      description: "Real KPIs with bar charts for course performance, pie charts for grade distribution, and comprehensive dashboard summaries."
     },
     {
       icon: AlertCircle,
-      title: "At-Risk Students",
-      description: "Identify students who need intervention with AI-powered early warning systems."
+      title: "Grouped At-Risk Students",
+      description: "See each at-risk student once with all problematic courses listed, searchable interface, and overall risk level indicators."
     },
     {
       icon: FileText,
-      title: "Progress Reports",
-      description: "Generate detailed reports for administration, parents, and academic committees."
+      title: "Smart Search & Filters",
+      description: "Instantly find any student or course with integrated search bars across all data tables and at-risk sections."
     }
   ];
 
   const studentFeatures = [
     {
       icon: TrendingUp,
-      title: "Performance Tracking",
-      description: "Monitor your academic progress with detailed analytics and visual representations."
+      title: "Visual Performance Charts",
+      description: "Interactive bar charts for mid-term marks, line graphs for overall metrics, and real-time predicted SGPA calculations."
     },
     {
       icon: Target,
-      title: "Goal Setting",
-      description: "Set academic goals and track progress with personalized recommendations and milestones."
+      title: "Predicted Performance",
+      description: "AI-powered predictions for end-term marks and final grades helping you plan and improve before it's too late."
     },
     {
       icon: Calendar,
-      title: "Attendance Insights",
-      description: "View attendance patterns and understand their correlation with academic performance."
+      title: "Course-wise Breakdown",
+      description: "See all your courses with attendance, assignments, quiz scores, and mid-term marks in collapsible, easy-to-read tables."
     },
     {
       icon: Star,
-      title: "Achievement Badges",
-      description: "Earn recognition for academic milestones and consistent performance improvements."
+      title: "At-Risk Alerts",
+      description: "Get notified about courses where you're at risk with actionable insights and recommendations for improvement."
     }
   ];
 
@@ -100,9 +103,9 @@ export const UseCases = () => {
                   <h3 className="text-3xl font-bold text-foreground">Faculty Dashboard</h3>
                 </div>
                 <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                  Empower educators with comprehensive tools to track, analyze, and improve 
-                  student outcomes. Upload data seamlessly and gain actionable insights that 
-                  drive better teaching decisions.
+                  Empower educators with intelligent data management—collapsible tables with pagination, 
+                  grouped at-risk student views, interactive KPI dashboards with charts, and powerful search 
+                  capabilities that make handling hundreds of students effortless.
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
@@ -118,7 +121,7 @@ export const UseCases = () => {
                     <span className="text-foreground">Early intervention recommendations</span>
                   </div>
                 </div>
-                <Button variant="academic" size="lg" className="mt-8">
+                <Button variant="academic" size="lg" className="mt-8" onClick={() => navigate('/auth')}>
                   Access Faculty Portal
                 </Button>
               </div>
@@ -152,25 +155,25 @@ export const UseCases = () => {
                   <h3 className="text-3xl font-bold text-foreground">Student Dashboard</h3>
                 </div>
                 <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                  Take control of your academic journey with personalized insights, 
-                  performance tracking, and AI-powered recommendations that help you 
-                  achieve your educational goals.
+                  Stay on top of your academic journey with interactive performance charts, AI-powered 
+                  predictions, collapsible course tables, and real-time insights that help you identify 
+                  areas for improvement and achieve your goals.
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
                     <div className="w-2 h-2 bg-accent rounded-full"></div>
-                    <span className="text-foreground">Personalized performance analytics and trends</span>
+                    <span className="text-foreground">Interactive charts showing your performance trends</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-2 h-2 bg-accent rounded-full"></div>
-                    <span className="text-foreground">Predictive insights for academic success</span>
+                    <span className="text-foreground">AI predictions for end-term marks and grades</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-2 h-2 bg-accent rounded-full"></div>
-                    <span className="text-foreground">Goal setting and progress tracking</span>
+                    <span className="text-foreground">Collapsible course tables with detailed metrics</span>
                   </div>
                 </div>
-                <Button variant="accent" size="lg" className="mt-8">
+                <Button variant="accent" size="lg" className="mt-8" onClick={() => navigate('/auth')}>
                   Access Student Portal
                 </Button>
               </div>

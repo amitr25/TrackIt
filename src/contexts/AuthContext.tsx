@@ -114,17 +114,17 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         provider: 'azure',
         options: {
           scopes: 'email profile openid',
-          redirectTo: `${window.location.origin}/dashboard`
+          redirectTo: `${window.location.origin}/auth`
         }
       });
 
-      if (error) {
-        toast({
-          title: "Azure Sign In Error",
-          description: error.message,
-          variant: "destructive",
-        });
-      }
+      // if (error) {
+      //   toast({
+      //     title: "Azure Sign In Error",
+      //     description: error.message,
+      //     variant: "destructive",
+      //   });
+      // }
 
       return { error };
     } catch (error: any) {

@@ -13,7 +13,7 @@ const Auth = () => {
   // Redirect if already authenticated
   useEffect(() => {
     if (user && !loading) {
-      navigate('/');
+      navigate('/dashboard');
     }
   }, [user, loading, navigate]);
 
@@ -50,11 +50,11 @@ const Auth = () => {
               </div>
               <div className="text-left">
                 <span className="text-2xl font-bold text-foreground">TrackIt</span>
-                <div className="text-sm text-muted-foreground">Academic Dashboard</div>
+                <div className="text-sm text-slate-300">Academic Dashboard</div>
               </div>
             </div>
             <h1 className="text-3xl font-bold text-foreground mb-2">Welcome to TrackIt</h1>
-            <p className="text-muted-foreground">
+            <p className="text-slate-300">
               Sign in with your KRMU Azure account to access your academic dashboard
             </p>
           </div>
@@ -100,7 +100,7 @@ const Auth = () => {
                     <UserCheck className="h-5 w-5 text-secondary flex-shrink-0" />
                     <div className="text-left">
                       <div className="text-sm font-medium text-foreground">Faculty Access</div>
-                      <div className="text-xs text-muted-foreground">Format: name@krmu.edu.in</div>
+                      <div className="text-xs text-muted-foreground">Format: name@krmangalam.edu.in</div>
                     </div>
                   </div>
                 </div>
@@ -118,7 +118,7 @@ const Auth = () => {
 
           {/* Additional Information */}
           <div className="mt-6 text-center">
-            <div className="text-sm text-muted-foreground">
+            <div className="text-sm text-slate-300">
               Need help? Contact your IT administrator or check the{' '}
               <span className="text-primary font-medium">KRMU IT Support</span> portal.
             </div>

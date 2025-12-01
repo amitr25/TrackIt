@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { BarChart3, Menu, X } from "lucide-react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const navigation = [
     { name: "Features", href: "#features" },
@@ -14,8 +16,8 @@ export const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-      <nav className="container mx-auto px-6 py-4">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border bg-blue-200">
+      <nav className="container mx-auto px-6 py-4 ">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center gap-2">
@@ -43,10 +45,10 @@ export const Header = () => {
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center gap-4">
-            <Button variant="ghost" onClick={() => window.location.href = '/auth'}>
+            <Button variant="ghost" onClick={() => navigate('/auth')}>
               Sign In
             </Button>
-            <Button variant="hero" onClick={() => window.location.href = '/auth'}>
+            <Button variant="ghost" onClick={() => navigate('/auth')}>
               Get Started
             </Button>
           </div>
@@ -79,10 +81,10 @@ export const Header = () => {
                 </a>
               ))}
               <div className="flex flex-col gap-2 pt-4 border-t border-border">
-                <Button variant="ghost" className="justify-start" onClick={() => window.location.href = '/auth'}>
+                <Button variant="ghost" className="justify-start" onClick={() => navigate('/auth')}>
                   Sign In
                 </Button>
-                <Button variant="hero" className="justify-start" onClick={() => window.location.href = '/auth'}>
+                <Button variant="ghost" className="justify-start" onClick={() => navigate('/auth')}>
                   Get Started
                 </Button>
               </div>

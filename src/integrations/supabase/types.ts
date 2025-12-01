@@ -57,6 +57,8 @@ export type Database = {
           mid_term_marks: number
           predicted_end_term_marks: number | null
           predicted_grade: string | null
+          quiz_score: number | null
+          semester: number
           student_email: string
           student_id: string
           student_name: string
@@ -74,6 +76,8 @@ export type Database = {
           mid_term_marks: number
           predicted_end_term_marks?: number | null
           predicted_grade?: string | null
+          quiz_score?: number | null
+          semester?: number
           student_email: string
           student_id: string
           student_name: string
@@ -91,6 +95,8 @@ export type Database = {
           mid_term_marks?: number
           predicted_end_term_marks?: number | null
           predicted_grade?: string | null
+          quiz_score?: number | null
+          semester?: number
           student_email?: string
           student_id?: string
           student_name?: string

@@ -8,8 +8,11 @@ import {
   ArrowRight,
   CheckCircle
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export const About = () => {
+  const navigate = useNavigate();
+  
   const problems = [
     "Student data scattered across multiple systems and formats",
     "Lack of actionable insights from academic performance data", 
@@ -146,7 +149,7 @@ export const About = () => {
               scattered academic information into meaningful insights, enabling proactive support 
               for student success and institutional excellence.
             </p>
-            <Button variant="secondary" size="lg" className="group">
+            <Button variant="secondary" size="lg" className="group" onClick={() => navigate('/auth')}>
               Start Your Journey with TrackIt
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>

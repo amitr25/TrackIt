@@ -1,13 +1,12 @@
-
 <div align="center">
 
-# 🎓 **TrackIt – Academic Dashboard for Smarter Learning**
+# 🎓 *TrackIt – Academic Dashboard for Smarter Learning*
 
 <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=19&duration=3000&pause=1000&color=00D4AA&center=true&vCenter=true&width=800&lines=📊+Early+Risk+Identification;🎯+Personalized+Learning+Plans;⚡+AI-Powered+Performance+Predictions;🔐+Secure+Azure+Authentication;🚀+Empowering+Students+%26+Faculty" alt="TrackIt Typing" />
 
 ---
 
-## 🚀 **Tech Stack**
+## 🚀 *Tech Stack*
 
 ### 🎨 Frontend Excellence
 <img src="https://skillicons.dev/icons?i=react,tailwind,netlify,typescript" />
@@ -18,7 +17,7 @@
 [![Netlify](https://img.shields.io/badge/Deployed_on-Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://netlify.com/)  
 
 
-### ☁️ Authentication & Cloud
+### ☁ Authentication & Cloud
 <img src="https://skillicons.dev/icons?i=azure,supabase" />
 
 [![Azure AD](https://img.shields.io/badge/Microsoft_Azure_AD-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white)](https://azure.microsoft.com/)  
@@ -34,7 +33,7 @@
 
 
 
-### 🗄️ Database & Storage
+### 🗄 Database & Storage
 <img src="https://skillicons.dev/icons?i=postgresql" />
 
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL_15-336791?style=for-the-badge&logo=postgresql&logoColor=white&labelColor=1a1a1a)](https://postgresql.org/)
@@ -53,4 +52,3 @@ TrackIt Capabilities:
   - Risk Detection: "Early alerts for low-performing students"
   - Authentication: "Azure AD (college Outlook ID login)"
   - Role-Based Access: "Faculty vs Student access control"
-

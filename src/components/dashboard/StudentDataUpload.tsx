@@ -77,7 +77,7 @@ export const StudentDataUpload = () => {
       const headers = lines[0].split(',').map(h => h.trim().toLowerCase());
 
       // Validate required columns
-      const requiredColumns = ['student_id', 'name', 'email', 'course_name', 'course_id', 'credits', 'mid_term_marks', 'attendance', 'assignments'];
+      const requiredColumns = ['student_id', 'name', 'email', 'course_name', 'course_id', 'credits', 'semester', 'mid_term_marks', 'attendance', 'assignments'];
       const missingColumns = requiredColumns.filter(col => !headers.includes(col));
 
       if (missingColumns.length > 0) {
@@ -96,17 +96,41 @@ export const StudentDataUpload = () => {
           record[header] = values[index];
         });
 
-        // Validate and prepare data
+          // Validate and prepare data
+        const midTermMarks = parseFloat(record.mid_term_marks);
+        const assignments = parseFloat(record.assignments);
+        const attendance = parseFloat(record.attendance);
+        const credits = parseInt(record.credits);
+        const semester = parseInt(record.semester);
+
+        // Validate ranges
+        if (midTermMarks < 0 || midTermMarks > 20) {
+          throw new Error(`Invalid mid_term_marks for ${record.name}: Must be between 0-20`);
+        }
+        if (assignments < 0 || assignments > 10) {
+          throw new Error(`Invalid assignments for ${record.name}: Must be between 0-10`);
+        }
+        if (attendance < 0 || attendance > 100) {
+          throw new Error(`Invalid attendance for ${record.name}: Must be between 0-100`);
+        }
+        if (credits < 1 || credits > 6) {
+          throw new Error(`Invalid credits for ${record.course_name}: Must be between 1-6`);
+        }
+        if (semester < 1 || semester > 8) {
+          throw new Error(`Invalid semester for ${record.name}: Must be between 1-8`);
+        }
+
         records.push({
           student_id: record.student_id,
           student_name: record.name,
           student_email: record.email,
           course_name: record.course_name,
           course_id: record.course_id,
-          credits: parseInt(record.credits),
-          mid_term_marks: parseFloat(record.mid_term_marks),
-          attendance: parseFloat(record.attendance),
-          assignments: parseFloat(record.assignments),
+          credits: credits,
+          semester: semester,
+          mid_term_marks: midTermMarks,
+          attendance: attendance,
+          assignments: assignments,
           faculty_id: user?.id,
           predicted_end_term_marks: null,
           predicted_grade: null
@@ -119,10 +143,13 @@ export const StudentDataUpload = () => {
         );
       }
 
-      // Insert into database
+      // Upsert into database (insert or update if exists)
       const { error } = await supabase
         .from('student_courses')
-        .insert(records);
+        .upsert(records, {
+          onConflict: 'student_id,course_id',
+          ignoreDuplicates: false
+        });
 
       if (error) throw error;
 
@@ -286,10 +313,15 @@ export const StudentDataUpload = () => {
           <h4 className="font-medium mb-2">File Format Guidelines</h4>
           <ul className="text-sm text-muted-foreground space-y-1">
             <li>• CSV files should have headers in the first row</li>
-            <li>• Required columns: student_id, name, email, course_name, course_id, credits, mid_term_marks, attendance, assignments</li>
+            <li>• Required columns: student_id, name, email, course_name, course_id, credits, semester, mid_term_marks, attendance, assignments</li>
             <li>• Column names must match exactly (case-insensitive)</li>
             <li>• Student IDs should be numbers only (email domain will be auto-appended)</li>
-            <li>• Numeric fields: credits (integer), mid_term_marks, attendance, assignments (0-100)</li>
+            <li>• Semester: 1-8 (integer)</li>
+            <li>• Mid-term marks: 0-20 (out of 20)</li>
+            <li>• Assignments: 0-10 (out of 10)</li>
+            <li>• Attendance: 0-100 (percentage)</li>
+            <li>• Credits: 1-6 (integer)</li>
+            <li>• File size limit: 10MB</li>
           </ul>
         </div>
       </CardContent>

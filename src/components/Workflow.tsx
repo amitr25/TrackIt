@@ -1,9 +1,12 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Upload, Cpu, Eye, ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import workflowImage from "@/assets/workflow-diagram.jpg";
 
 export const Workflow = () => {
+  const navigate = useNavigate();
+  
   const steps = [
     {
       icon: Upload,
@@ -114,7 +117,7 @@ export const Workflow = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button variant="academic" size="lg" className="group">
+          <Button variant="academic" size="lg" className="group" onClick={() => navigate('/auth')}>
             See TrackIt in Action
             <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
           </Button>

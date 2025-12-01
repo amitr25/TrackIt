@@ -28,7 +28,7 @@ const Dashboard = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-muted/30">
       {profile.role === 'student' ? (
         <StudentDashboard />
       ) : (

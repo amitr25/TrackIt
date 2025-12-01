@@ -7,57 +7,61 @@ import {
   Target, 
   BarChart3,
   Clock,
-  AlertTriangle 
+  AlertTriangle,
+  Search,
+  Filter,
+  Minimize2,
+  PieChart
 } from "lucide-react";
 
 export const Features = () => {
   const features = [
     {
-      icon: TrendingUp,
-      title: "Progress Tracking Dashboard",
-      description: "Real-time visualization of student performance with interactive charts and analytics that help identify trends and patterns.",
+      icon: PieChart,
+      title: "Interactive Overview Dashboards",
+      description: "Dynamic dashboards with real KPIs, interactive charts showing course performance, grade distribution, and comprehensive analytics at a glance.",
       color: "bg-primary-light text-primary"
     },
     {
       icon: AlertTriangle,
-      title: "Early Risk Identification",
-      description: "AI-powered algorithms analyze patterns to predict students at risk of falling behind, enabling proactive intervention.",
+      title: "Smart At-Risk Detection",
+      description: "AI-powered system groups at-risk students intelligently, showing all problematic courses per student with searchable interface and overall risk levels.",
       color: "bg-accent-light text-accent"
     },
     {
-      icon: Target,
-      title: "Personalized Learning Plans",
-      description: "Custom-tailored academic recommendations based on individual performance data and learning patterns.",
+      icon: Minimize2,
+      title: "Collapsible Data Sections",
+      description: "Efficiently manage large datasets with collapsible tables and sections, keeping your interface clean and focused on what matters.",
       color: "bg-secondary-light text-secondary"
     },
     {
-      icon: BarChart3,
-      title: "Attendance & Performance Analytics",
-      description: "Comprehensive tracking of attendance patterns correlated with academic performance and engagement metrics.",
+      icon: Filter,
+      title: "Advanced Pagination & Filtering",
+      description: "Handle thousands of records effortlessly with smart pagination (10-20 records per page) and real-time search capabilities.",
       color: "bg-primary-light text-primary"
     },
     {
-      icon: Shield,
-      title: "Microsoft Azure Authentication",
-      description: "Secure login with institutional Outlook/College ID integration and role-based access control (RBAC).",
+      icon: Search,
+      title: "Powerful Search Features",
+      description: "Find any student, course, or record instantly with integrated search bars across all data tables and at-risk sections.",
       color: "bg-analytics-blue/10 text-analytics-blue"
     },
     {
-      icon: Brain,
-      title: "ML-Powered Insights",
-      description: "Machine learning models provide predictive analytics and intelligent recommendations for academic success.",
+      icon: BarChart3,
+      title: "Visual Analytics & Charts",
+      description: "Beautiful bar charts, pie charts, and line graphs display course performance, grade distribution, and performance metrics interactively.",
       color: "bg-secondary-light text-secondary"
     },
     {
-      icon: Users,
-      title: "Role-Based Dashboards",
-      description: "Customized interfaces for faculty and students with appropriate access levels and relevant information.",
+      icon: Shield,
+      title: "Azure Authentication",
+      description: "Secure login with institutional Outlook/College ID integration and role-based access control (RBAC) for faculty and students.",
       color: "bg-accent-light text-accent"
     },
     {
-      icon: Clock,
-      title: "Real-Time Data Processing",
-      description: "Instant updates and processing of academic data ensuring current and accurate insights at all times.",
+      icon: Brain,
+      title: "ML-Powered Predictions",
+      description: "Machine learning models predict end-term marks, identify patterns, and provide intelligent recommendations for academic success.",
       color: "bg-primary-light text-primary"
     }
   ];
@@ -67,14 +71,14 @@ export const Features = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Powerful Features for{" "}
+            Latest Features for{" "}
             <span className="bg-gradient-primary bg-clip-text text-transparent">
               Academic Excellence
             </span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            TrackIt combines cutting-edge technology with educational insights to deliver 
-            a comprehensive platform that transforms how institutions manage and analyze student data.
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            TrackIt now includes advanced data management, intelligent grouping, interactive visualizations, 
+            and powerful search capabilities—everything you need to transform academic data into actionable insights.
           </p>
         </div>
 
